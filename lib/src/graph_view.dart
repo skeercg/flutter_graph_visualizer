@@ -1,9 +1,30 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-import 'edge.dart';
+import 'graph_controller.dart';
+import 'models.dart';
 import 'theme.dart';
+
+class Graph extends StatelessWidget {
+  const Graph({super.key});
+
+  @override
+  Widget build(BuildContext context) => Consumer<GraphController>(
+        builder: (context, graph, child) => Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8),
+            border: Border.all(color: AppColors.primary),
+          ),
+          width: 800,
+          height: 800,
+          child: CustomPaint(
+            painter: GraphPainter(graph.edges),
+          ),
+        ),
+      );
+}
 
 class GraphPainter extends CustomPainter {
   final List<Edge> edges;

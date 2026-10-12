@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'graph_controller.dart';
+import 'graph_data_menu.dart';
+import 'graph_view.dart';
 import 'theme.dart';
-import 'graph.dart';
-import 'graph_data.dart';
-import 'graph_model.dart';
 
 class GraphEditorScreen extends StatelessWidget {
   const GraphEditorScreen({super.key});
 
   @override
   Widget build(BuildContext context) => ChangeNotifierProvider(
-        create: (context) => GraphModel(),
+        create: (context) => GraphController(),
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: AppColors.primary,
@@ -21,7 +21,7 @@ class GraphEditorScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                GraphData(),
+                GraphDataMenu(),
                 SizedBox(width: 30),
                 Graph(),
               ],

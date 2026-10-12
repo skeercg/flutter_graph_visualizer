@@ -2,9 +2,9 @@ import 'dart:collection';
 
 import 'package:flutter/widgets.dart';
 
-import 'edge.dart';
+import 'models.dart';
 
-class GraphModel extends ChangeNotifier {
+class GraphController extends ChangeNotifier {
   final _edges = <Edge>[];
 
   UnmodifiableListView<Edge> get edges => UnmodifiableListView<Edge>(_edges);

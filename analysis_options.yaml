@@ -19,6 +19,11 @@ analyzer:
     - 'test/data/**'
     # Coverage
     - 'test/.test_coverage.dart'
+    - android/**
+    - ios/**
+    - windows/**
+    - macos/**
+    - linux/**
 
   # Enable the following options to enable strong mode.
   language:
